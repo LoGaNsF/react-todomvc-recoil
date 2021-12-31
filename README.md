@@ -1,27 +1,6 @@
-[![npm version](https://badge.fury.io/js/cra-template-recoil.svg)](https://badge.fury.io/js/cra-template-recoil)
-![npm downloads](https://img.shields.io/npm/dm/cra-template-recoil)
+# ReactJS TodoMVC (Recoil)
 
-# A light weight Create React App template with Recoil
-
-This template provides you a project with [Recoil](https://recoiljs.org/) setup.
-[Recoil](https://recoiljs.org/) is a state management library for [React](https://reactjs.org/) developed and used by Facebook.
-This template comes in handy if you want to play with Recoil or start a new project with it.
-
-## Usage
-
-```bash
-npx create-react-app your-project-name --template recoil
-```
-
-Or
-
-```bash
-yarn create react-app your-project-name --template recoil
-```
-
-`npx` command installs the most recent stable version of CRA from npm.
-
-`--template` parameter points to this template, note that `cra-template-` prefix is omitted.
+Ejemplo de uso de ReactJS + TypeScript con el clásico TodoMVC utilizando Recoil. Se trata del mismo ejemplo realizado [anteriormente](https://github.com/LoGaNsF/react-todomvc-redux) pero cambiando Redux por Recoil y usando TypeScript. En este ejemplo se ha utilizado `create-react-app` con el template de recoil para crear el proyecto base.
 
 ## Available Scripts
 
@@ -34,21 +13,3 @@ In the project root directory, you can run:
 - `yarn build` - builds the app for production to the `build` folder.
 
 - `yarn eject` - exposes content of `react-script` package
-
-## How to create custom Create React App (CRA) templates article
-
-I created a step by step guide on how to create your own templates. Check it on
-
-[View on Medium](https://medium.com/@alexgrischuk/how-to-create-custom-create-react-app-cra-templates-73a5196edeb)
-
-[View on personal blog](https://grischuk.de/how-to-create-custom-create-react-app-cra-templates)
-
-[View on dev.to](https://dev.to/alexandrg/how-to-create-custom-create-react-app-cra-templates-3nca)
-
-## My other templates
-
-[Create React App template with TypeScript, Redux, React Router, Enzyme and custom ESlint](https://github.com/alexandr-g/cra-template-typescript-redux)
-
-## Thank you
-
-I hope this template will be helpful for you 🙏

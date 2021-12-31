@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "ReactJS TodoMVC (Recoil)",
+  "name": "ReactJS TodoMVC (Recoil)",
   "icons": [
     {
       "src": "favicon.ico",

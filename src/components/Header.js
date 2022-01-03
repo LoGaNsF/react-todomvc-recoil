@@ -1,22 +1,14 @@
 import { useState } from 'react';
-import { useRecoilState } from 'recoil';
-
-import { todos } from '../store/atoms';
+import { useTodos } from '../hooks/useTodos';
 
 const Header = () => {
   const [value, setValue] = useState('');
-  const [todoList, setTodos] = useRecoilState(todos)
+  const { create } = useTodos();
 
   const handleKeyDown = (event) => {
     if (event.keyCode === 13) {
       event.preventDefault();
-      const newTodo = {
-        id: (+new Date() + Math.floor(Math.random() * 999999)).toString(36),
-        text: event.target.value,
-        completed: false,
-        created_at: new Date()
-      };
-      setTodos([...todoList, newTodo]);
+      create(event.target.value);
       setValue('');
     }
   };

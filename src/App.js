@@ -1,17 +1,11 @@
-import React from 'react'
-import { RecoilRoot } from 'recoil'
+import Header from "./components/Header";
+import MainSection from "./components/MainSection";
 
-import Counter from './components/Counter'
+const App = () => (
+  <section className="todoapp">
+    <Header />
+    <MainSection />
+  </section>
+);
 
-import './App.css'
-
-function App() {
-  return (
-    <RecoilRoot>
-      <h1>The project is running with Recoil</h1>
-      <Counter />
-    </RecoilRoot>
-  )
-}
-
-export default App
+export default App;

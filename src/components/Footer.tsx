@@ -1,12 +1,12 @@
+import React from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
-
-import { SHOW_ALL, SHOW_ACTIVE, SHOW_COMPLETED } from '../store/constants/FilterTypes';
 
 import Link from './Link';
 import { todos, visibilityFilter } from '../store/atoms';
 import { completedTodosCount, activeTodosCount } from '../store/selectors';
+import { SHOW_ALL, SHOW_ACTIVE, SHOW_COMPLETED } from '../store/constants/FilterTypes';
 
-const FILTER_TITLES = {
+const FILTER_TITLES: { [key: string]: string } = {
   [SHOW_ALL]: 'All',
   [SHOW_ACTIVE]: 'Active',
   [SHOW_COMPLETED]: 'Completed'
@@ -19,7 +19,7 @@ const Footer = () => {
   const [currentFilter, setVisibility] = useRecoilState(visibilityFilter);
   
   const onClearCompleted = () => {
-    const newTodoList = [...todosList.filter((todo) => !todo.completed)];
+    const newTodoList = [...todosList.filter((todo: any) => !todo.completed)];
     setTodos(newTodoList);
   };
 

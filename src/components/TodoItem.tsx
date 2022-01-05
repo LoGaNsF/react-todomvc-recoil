@@ -1,13 +1,21 @@
-import { useState } from 'react';
-import PropTypes from 'prop-types';
+import React, { FC, useState } from 'react';
 import classnames from 'classnames';
 
-const TodoItem = ({ data, editTodo, deleteTodo, toggleTodo }) => {
+import { Todo } from '../store/atoms';
+
+interface TodoProps {
+  data: Todo;
+  editTodo: (id: string, text: string) => void;
+  deleteTodo: (id: string) => void;
+  toggleTodo: (id: string) => void;
+}
+
+const TodoItem: FC<TodoProps> = ({ data, editTodo, deleteTodo, toggleTodo }) => {
   const { id, text, completed } = data;
   const [editText, setEditText] = useState(text);
   const [editing, setEditing] = useState(false);
 
-  const handleChange = (e) => setEditText(e.target.value);
+  const handleChange = (e: any) => setEditText(e.target.value);
 
   const handleBlur = () => {
     editTodo(id, editText);
@@ -44,18 +52,6 @@ const TodoItem = ({ data, editTodo, deleteTodo, toggleTodo }) => {
       )}
     </li>
   );
-};
-
-TodoItem.propTypes = {
-  data: PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired,
-    completed: PropTypes.bool.isRequired,
-    created_at: PropTypes.instanceOf(Date).isRequired
-  }).isRequired,
-  editTodo: PropTypes.func.isRequired,
-  deleteTodo: PropTypes.func.isRequired,
-  toggleTodo: PropTypes.func.isRequired
 };
 
 export default TodoItem;

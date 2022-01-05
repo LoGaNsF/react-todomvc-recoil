@@ -5,9 +5,9 @@ import {
   SHOW_ALL,
   SHOW_COMPLETED,
 } from "../constants/FilterTypes";
-import { todos, visibilityFilter } from "../atoms";
+import { Todo, todos, visibilityFilter } from "../atoms";
 
-export const visibleTodos = selector({
+export const visibleTodos = selector<Todo[]>({
   key: "visibleTodos",
   get: ({ get }) => {
     const todosList = get(todos);
@@ -26,7 +26,7 @@ export const visibleTodos = selector({
   },
 });
 
-export const activeTodosCount = selector({
+export const activeTodosCount = selector<number>({
   key: "activeTodosCount",
   get: ({ get }) => {
     const todosList = get(todos);
@@ -37,7 +37,7 @@ export const activeTodosCount = selector({
   },
 });
 
-export const completedTodosCount = selector({
+export const completedTodosCount = selector<number>({
   key: "completedTodosCount",
   get: ({ get }) => {
     const todosList = get(todos);
@@ -48,10 +48,10 @@ export const completedTodosCount = selector({
   },
 });
 
-export const areAllTodosCompleted = selector({
+export const areAllTodosCompleted = selector<boolean>({
   key: "areAllTodosCompleted",
   get: ({ get }) => {
     const todosList = get(todos);
-    return todosList.length && todos.every((todo) => todo.completed);
+    return !!todosList.length && todosList.every((todo) => todo.completed);
   },
 });

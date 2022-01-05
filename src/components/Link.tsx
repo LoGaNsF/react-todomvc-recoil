@@ -1,7 +1,13 @@
-import PropTypes from 'prop-types';
+import React, { FC, ReactChild, ReactChildren } from 'react';
 import classnames from 'classnames';
 
-const Link = ({ active, setFilter, children }) => (
+interface LinkProps {
+  active: boolean;
+  setFilter: () => void;
+  children: ReactChild | ReactChildren;
+}
+
+const Link: FC<LinkProps> = ({ active, setFilter, children }) => (
   // eslint-disable-next-line
   <a
     className={classnames({ selected: active })}
@@ -9,15 +15,9 @@ const Link = ({ active, setFilter, children }) => (
     onClick={() => setFilter()}
     onKeyDown={() => setFilter()}
     role="button"
-    tabIndex="0">
+    tabIndex={0}>
     {children}
   </a>
 );
-
-Link.propTypes = {
-  active: PropTypes.bool.isRequired,
-  children: PropTypes.node.isRequired,
-  setFilter: PropTypes.func.isRequired
-};
 
 export default Link;

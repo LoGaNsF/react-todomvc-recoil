@@ -1,6 +1,8 @@
+import React from "react";
 import { useRecoilValue } from "recoil";
 
 import TodoItem from "./TodoItem";
+import { Todo } from "../store/atoms";
 import { visibleTodos } from "../store/selectors";
 import { useTodos } from "../hooks/useTodos";
 
@@ -10,7 +12,7 @@ const TodoList = () => {
 
   return (
     <ul className="todo-list">
-      {todosVisible.map((todo) => (
+      {todosVisible.map((todo: Todo) => (
         <TodoItem
           key={todo.id}
           data={todo}

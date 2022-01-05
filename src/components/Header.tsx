@@ -1,11 +1,11 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useTodos } from '../hooks/useTodos';
 
 const Header = () => {
   const [value, setValue] = useState('');
   const { create } = useTodos();
 
-  const handleKeyDown = (event) => {
+  const handleKeyDown = (event: any) => {
     if (event.keyCode === 13) {
       event.preventDefault();
       create(event.target.value);

@@ -1,6 +1,6 @@
-import { useRecoilState } from "recoil";
+import { useRecoilState } from 'recoil';
 
-import { Todo, todos } from "../store/atoms";
+import { Todo, todos } from '../store/atoms';
 
 interface UseTodosHook {
   create: (text: string) => void;

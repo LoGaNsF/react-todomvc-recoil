@@ -15,7 +15,8 @@ const Link: FC<LinkProps> = ({ active, setFilter, children }) => (
     onClick={() => setFilter()}
     onKeyDown={() => setFilter()}
     role="button"
-    tabIndex={0}>
+    tabIndex={0}
+  >
     {children}
   </a>
 );

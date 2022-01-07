@@ -1,14 +1,10 @@
-import { selector } from "recoil";
+import { selector } from 'recoil';
 
-import {
-  SHOW_ACTIVE,
-  SHOW_ALL,
-  SHOW_COMPLETED,
-} from "../constants/FilterTypes";
-import { Todo, todos, visibilityFilter } from "../atoms";
+import { SHOW_ACTIVE, SHOW_ALL, SHOW_COMPLETED } from '../constants/FilterTypes';
+import { Todo, todos, visibilityFilter } from '../atoms';
 
 export const visibleTodos = selector<Todo[]>({
-  key: "visibleTodos",
+  key: 'visibleTodos',
   get: ({ get }) => {
     const todosList = get(todos);
     const filter = get(visibilityFilter);
@@ -27,29 +23,23 @@ export const visibleTodos = selector<Todo[]>({
 });
 
 export const activeTodosCount = selector<number>({
-  key: "activeTodosCount",
+  key: 'activeTodosCount',
   get: ({ get }) => {
     const todosList = get(todos);
-    return todosList.reduce(
-      (count, todo) => (!todo.completed ? count + 1 : count),
-      0
-    );
+    return todosList.reduce((count, todo) => (!todo.completed ? count + 1 : count), 0);
   },
 });
 
 export const completedTodosCount = selector<number>({
-  key: "completedTodosCount",
+  key: 'completedTodosCount',
   get: ({ get }) => {
     const todosList = get(todos);
-    return todosList.reduce(
-      (count, todo) => (todo.completed ? count + 1 : count),
-      0
-    );
+    return todosList.reduce((count, todo) => (todo.completed ? count + 1 : count), 0);
   },
 });
 
 export const areAllTodosCompleted = selector<boolean>({
-  key: "areAllTodosCompleted",
+  key: 'areAllTodosCompleted',
   get: ({ get }) => {
     const todosList = get(todos);
     return !!todosList.length && todosList.every((todo) => todo.completed);

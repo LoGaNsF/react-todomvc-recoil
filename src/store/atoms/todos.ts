@@ -1,4 +1,4 @@
-import { atom } from "recoil";
+import { atom } from 'recoil';
 
 export interface Todo {
   id: string;
@@ -8,6 +8,6 @@ export interface Todo {
 }
 
 export const todos = atom<Todo[]>({
-  key: "todos",
+  key: 'todos',
   default: [],
 });

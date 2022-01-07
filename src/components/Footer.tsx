@@ -9,7 +9,7 @@ import { SHOW_ALL, SHOW_ACTIVE, SHOW_COMPLETED } from '../store/constants/Filter
 const FILTER_TITLES: { [key: string]: string } = {
   [SHOW_ALL]: 'All',
   [SHOW_ACTIVE]: 'Active',
-  [SHOW_COMPLETED]: 'Completed'
+  [SHOW_COMPLETED]: 'Completed',
 };
 
 const Footer = () => {
@@ -17,7 +17,7 @@ const Footer = () => {
   const completedCount = useRecoilValue(completedTodosCount);
   const [todosList, setTodos] = useRecoilState(todos);
   const [currentFilter, setVisibility] = useRecoilState(visibilityFilter);
-  
+
   const onClearCompleted = () => {
     const newTodoList = [...todosList.filter((todo: any) => !todo.completed)];
     setTodos(newTodoList);

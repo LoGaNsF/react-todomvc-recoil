@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import { useRecoilState, useRecoilValue } from 'recoil';
 
 import Footer from './Footer';
@@ -7,12 +7,12 @@ import { Todo, todos } from '../store/atoms';
 import { completedTodosCount } from '../store/selectors';
 
 const MainSection = () => {
-  const [todoList, setTodos] = useRecoilState(todos)
+  const [todoList, setTodos] = useRecoilState(todos);
   const todosCompleted = useRecoilValue(completedTodosCount);
 
   const completeAll = (e: any) => {
     setTodos([...todoList.map((todo: Todo) => ({ ...todo, completed: e.target.checked }))]);
-  }
+  };
 
   return (
     <section className="main">

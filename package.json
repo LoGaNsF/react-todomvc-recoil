@@ -25,6 +25,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "lint": "eslint src",
+    "prettier:fix": "prettier --write ./src",
+    "prettier:check": "prettier --check ./src",
     "pre-commit": "lint-staged",
     "prepare": "husky install"
   },
@@ -52,11 +55,9 @@
     }
   },
   "lint-staged": {
-    "src/**/*.+(js|json|ts|tsx)": [
-      "eslint"
-    ],
-    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-      "prettier --write"
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "npm run prettier:fix",
+      "npm run lint"
     ]
   },
   "browserslist": {

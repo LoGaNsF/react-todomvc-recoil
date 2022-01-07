@@ -1,10 +1,10 @@
-import React from "react";
-import { useRecoilValue } from "recoil";
+import React from 'react';
+import { useRecoilValue } from 'recoil';
 
-import TodoItem from "./TodoItem";
-import { Todo } from "../store/atoms";
-import { visibleTodos } from "../store/selectors";
-import { useTodos } from "../hooks/useTodos";
+import TodoItem from './TodoItem';
+import { Todo } from '../store/atoms';
+import { visibleTodos } from '../store/selectors';
+import { useTodos } from '../hooks/useTodos';
 
 const TodoList = () => {
   const todosVisible = useRecoilValue(visibleTodos);
